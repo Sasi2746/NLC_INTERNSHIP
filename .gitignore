@@ -1,0 +1,38 @@
+# Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDEs
+.vscode/
+.idea/
+
+# Exclude Resume Website as requested
+flask-project/
+
+# Redundant archives
+downtime-react.zip
+
+# Ignore runtime uploads in Flask Downtime app
+Downtime/uploads/*
+!Downtime/uploads/.gitkeep
+
+# Ignore generated static plots and PDFs in Flask Downtime app
+Downtime/static/climate_downtime.png
+Downtime/static/material_distribution.png
+Downtime/static/plant_distribution.png
+Downtime/static/shift_distribution.png
+Downtime/static/top10_group_codes.png
+Downtime/static/top_machines.png
+Downtime/static/report_*.pdf
+
+# System logs & files
+.DS_Store
+*.log

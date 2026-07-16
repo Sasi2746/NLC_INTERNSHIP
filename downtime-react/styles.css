@@ -1,0 +1,78 @@
+:root {
+  --brand: #0d6efd;
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --muted: #6c757d;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; font-family: "Segoe UI", sans-serif; background: var(--bg); }
+
+.app-shell { display: flex; min-height: 100vh; }
+.app-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0b5ed7, #0a58ca);
+  color: #fff;
+  padding: 18px 12px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  z-index: 999;
+}
+.sidebar-header { padding: 6px 8px; font-size: 1.2rem; font-weight: 700; }
+.sidebar-nav button {
+  width: 100%;
+  background: transparent;
+  color: rgba(255,255,255,.95);
+  border: 0;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+.sidebar-nav button.active,
+.sidebar-nav button:hover { background: rgba(255,255,255,.12); }
+
+.app-main { flex: 1; display: flex; flex-direction: column; margin-left: 220px; }
+.topbar {
+  position: sticky;
+  top: 0;
+  height: 56px;
+  border-bottom: 1px solid rgba(16,24,40,.08);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  font-weight: 700;
+  z-index: 100;
+}
+
+.main-content { padding: 20px; max-width: 1200px; }
+.chart-card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 6px 16px rgba(16,24,40,.06);
+  margin-bottom: 16px;
+}
+/* Center plotly plots inside chart cards (useful for pie charts) */
+.plot-wrapper { display: flex; justify-content: center; align-items: center; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.kpi .value { font-size: 1.6rem; font-weight: 700; }
+.kpi .label { color: var(--muted); font-size: .9rem; }
+.upload-box { max-width: 420px; }
+
+.table-wrap { overflow-x: auto; }
+.error { color: #b02a37; margin-bottom: 10px; }
+.muted { color: var(--muted); }
+
+@media (max-width: 900px) {
+  .app-shell { flex-direction: column; }
+  .app-sidebar { width: 100%; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
